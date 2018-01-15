@@ -21,6 +21,16 @@ class App extends Component {
       });
   }
 
+  changeRosieNameHandler = (event) => {
+    this.setState({
+      wolves: [
+        { name: "Cassira", age: 7},
+        { name: "Aldway", age: 12},
+        { name: event.target.value, age: 1}
+      ]
+    });
+  }
+
   /*
     Two ways of passing arguments of methods: this.functionName.bind(this, newValue) OR
     () => this.functionName(newValue). By binding it, the second "this" keyword refers 
@@ -42,7 +52,7 @@ class App extends Component {
           <Person 
             name={this.state.wolves[2].name} 
             age={this.state.wolves[2].age}
-            click={this.switchWolfHandler.bind(this, "19")}>I'm just a puppy yet :)</Person>
+            changename={this.changeRosieNameHandler}>I'm just a puppy yet :)</Person>
       </div>
     );
   }
