@@ -9,13 +9,24 @@ class App extends Component {
         { name: "Aldway", age: "11" },
         { name: "Rose", age: "1" }
       ]
-  };
+  }
+
+  switchWolfHandler = () => {
+      this.setState( {
+        wolves: [
+          { name: "Cassira", age: "6" },
+          { name: "Aldway", age: "12"},
+          { name: "Rosie", age: "2"}
+        ]
+      });
+  }
+
   render() {
     return (
       <div className="App">
           <h1>Hello World!</h1>
           <p>This is my first React app running on my laptop.</p>
-          <button>Switch Wolf</button>
+          <button onClick={this.switchWolfHandler}>Switch Wolf</button>
           <Person name={this.state.wolves[0].name} age={this.state.wolves[0].age}>I love full moons!</Person>
           <Person name={this.state.wolves[1].name} age={this.state.wolves[1].age}>I'm quite happy and peaceful.</Person>
           <Person name={this.state.wolves[2].name} age={this.state.wolves[2].age}>I'm just a puppy yet :)</Person>
